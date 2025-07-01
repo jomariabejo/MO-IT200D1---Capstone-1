@@ -1,0 +1,310 @@
+erDiagram
+    %% Core User Entities
+    USER {
+        int user_id PK
+        string email UK
+        string password_hash
+        string first_name
+        string last_name
+        string phone_number
+        string profile_picture_url
+        datetime created_at
+        datetime updated_at
+        datetime last_login
+        enum status "active, inactive, suspended"
+        string reset_token
+        datetime reset_token_expires
+    }
+
+    PARENT {
+        int parent_id PK
+        int user_id FK
+        string occupation
+        string work_phone
+        string emergency_contact
+        string address
+        string city
+        string state
+        string zip_code
+        boolean is_primary_contact
+        string preferred_communication_method
+    }
+
+    TEACHER {
+        int teacher_id PK
+        int user_id FK
+        string employee_id UK
+        string department
+        string qualification
+        int years_experience
+        string office_location
+        string office_hours
+        boolean is_class_teacher
+        datetime hire_date
+    }
+
+    STUDENT {
+        int student_id PK
+        string student_number UK
+        string first_name
+        string last_name
+        date date_of_birth
+        enum gender "male, female, other"
+        string grade_level
+        string address
+        string medical_info
+        string emergency_contact
+        datetime enrollment_date
+        enum status "active, inactive, graduated, transferred"
+    }
+
+    %% Academic Structure
+    SCHOOL {
+        int school_id PK
+        string school_name
+        string school_code UK
+        string address
+        string city
+        string state
+        string zip_code
+        string phone_number
+        string email
+        string principal_name
+        datetime established_date
+    }
+
+    CLASSROOM {
+        int classroom_id PK
+        int school_id FK
+        string classroom_code UK
+        string room_number
+        string grade_level
+        string section
+        int capacity
+        int teacher_id FK
+        string subject_area
+        string academic_year
+        datetime created_at
+    }
+
+    SUBJECT {
+        int subject_id PK
+        string subject_name
+        string subject_code UK
+        string description
+        int credits
+        string department
+        boolean is_core_subject
+    }
+
+    %% Communication Entities
+    MESSAGE {
+        int message_id PK
+        int sender_id FK
+        int receiver_id FK
+        int classroom_id FK
+        string subject
+        text message_content
+        datetime sent_at
+        datetime read_at
+        enum priority_level "low, medium, high, urgent"
+        enum message_type "direct, announcement, alert"
+        boolean is_read
+        int parent_message_id FK
+        string attachment_url
+    }
+
+    ANNOUNCEMENT {
+        int announcement_id PK
+        int teacher_id FK
+        int classroom_id FK
+        string title
+        text content
+        datetime posted_at
+        datetime expires_at
+        enum priority_level "low, medium, high, urgent"
+        enum announcement_type "general, academic, event, emergency"
+        boolean is_active
+        string attachment_url
+    }
+
+    NOTIFICATION {
+        int notification_id PK
+        int user_id FK
+        string title
+        text content
+        enum notification_type "message, announcement, event, grade, attendance"
+        datetime created_at
+        datetime sent_at
+        boolean is_read
+        boolean is_push_sent
+        string reference_id
+        enum priority "low, medium, high"
+    }
+
+    %% Document Management
+    DOCUMENT {
+        int document_id PK
+        int uploaded_by FK
+        string document_name
+        string file_path
+        string file_type
+        int file_size
+        datetime uploaded_at
+        enum document_type "assignment, report, certificate, form"
+        string description
+        enum access_level "public, classroom, private"
+    }
+
+    %% Event Management
+    EVENT {
+        int event_id PK
+        int created_by FK
+        int classroom_id FK
+        string event_title
+        text description
+        datetime start_datetime
+        datetime end_datetime
+        string location
+        enum event_type "meeting, conference, activity, exam, holiday"
+        enum status "scheduled, ongoing, completed, cancelled"
+        boolean is_recurring
+        string recurrence_pattern
+    }
+
+    %% Academic Records
+    GRADE {
+        int grade_id PK
+        int student_id FK
+        int subject_id FK
+        int teacher_id FK
+        string assessment_name
+        decimal grade_value
+        decimal max_points
+        date graded_date
+        enum grade_type "quiz, test, assignment, project, final"
+        string comments
+        datetime created_at
+    }
+
+    ATTENDANCE {
+        int attendance_id PK
+        int student_id FK
+        int classroom_id FK
+        date attendance_date
+        enum status "present, absent, late, excused"
+        time check_in_time
+        string notes
+        int recorded_by FK
+        datetime created_at
+    }
+
+    %% System Configuration
+    CLASSROOM_ACCESS_CODE {
+        int code_id PK
+        int classroom_id FK
+        string access_code UK
+        datetime generated_at
+        datetime expires_at
+        boolean is_active
+        int generated_by FK
+    }
+
+    DEVICE_TOKEN {
+        int token_id PK
+        int user_id FK
+        string device_token
+        string device_type
+        datetime registered_at
+        boolean is_active
+    }
+
+    %% Relationship Tables
+    PARENT_STUDENT {
+        int parent_id FK
+        int student_id FK
+        enum relationship_type "father, mother, guardian, sibling"
+        boolean is_primary_contact
+        datetime created_at
+    }
+
+    STUDENT_CLASSROOM {
+        int student_id FK
+        int classroom_id FK
+        datetime enrolled_at
+        enum status "active, dropped, completed"
+        decimal final_grade
+    }
+
+    TEACHER_SUBJECT {
+        int teacher_id FK
+        int subject_id FK
+        int classroom_id FK
+        string academic_year
+        datetime assigned_at
+    }
+
+    DOCUMENT_SHARE {
+        int document_id FK
+        int shared_with FK
+        int shared_by FK
+        datetime shared_at
+        enum permission_level "view, download, edit"
+        datetime expires_at
+    }
+
+    EVENT_PARTICIPANT {
+        int event_id FK
+        int user_id FK
+        enum participant_type "organizer, attendee, optional"
+        enum response_status "pending, accepted, declined, tentative"
+        datetime responded_at
+        string notes
+    }
+
+    ANNOUNCEMENT_RECIPIENT {
+        int announcement_id FK
+        int user_id FK
+        datetime sent_at
+        datetime read_at
+        boolean is_read
+    }
+
+    %% Relationships
+    USER ||--o{ PARENT : "is"
+    USER ||--o{ TEACHER : "is"
+    
+    PARENT }o--o{ STUDENT : PARENT_STUDENT
+    STUDENT }o--o{ CLASSROOM : STUDENT_CLASSROOM
+    TEACHER }o--o{ SUBJECT : TEACHER_SUBJECT
+    TEACHER }o--o{ CLASSROOM : "teaches"
+    
+    CLASSROOM }o--|| SCHOOL : "belongs_to"
+    CLASSROOM ||--o{ CLASSROOM_ACCESS_CODE : "has"
+    
+    USER ||--o{ MESSAGE : "sends"
+    USER ||--o{ MESSAGE : "receives"
+    MESSAGE }o--|| CLASSROOM : "belongs_to"
+    MESSAGE ||--o{ MESSAGE : "replies_to"
+    
+    TEACHER ||--o{ ANNOUNCEMENT : "creates"
+    CLASSROOM ||--o{ ANNOUNCEMENT : "receives"
+    ANNOUNCEMENT }o--o{ USER : ANNOUNCEMENT_RECIPIENT
+    
+    USER ||--o{ NOTIFICATION : "receives"
+    USER ||--o{ DEVICE_TOKEN : "has"
+    
+    USER ||--o{ DOCUMENT : "uploads"
+    DOCUMENT }o--o{ USER : DOCUMENT_SHARE
+    
+    USER ||--o{ EVENT : "creates"
+    CLASSROOM ||--o{ EVENT : "hosts"
+    EVENT }o--o{ USER : EVENT_PARTICIPANT
+    
+    STUDENT ||--o{ GRADE : "receives"
+    TEACHER ||--o{ GRADE : "assigns"
+    SUBJECT ||--o{ GRADE : "for"
+    
+    STUDENT ||--o{ ATTENDANCE : "has"
+    CLASSROOM ||--o{ ATTENDANCE : "records"
+    TEACHER ||--o{ ATTENDANCE : "takes"
