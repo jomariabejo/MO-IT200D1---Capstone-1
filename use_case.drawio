@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0" version="27.2.0" pages="3">
   <diagram name="initial" id="fPfGQbioiCVRYNzF3hgY">
-    <mxGraphModel dx="2918" dy="2308" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1835" dy="1675" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -58,7 +58,7 @@
         <mxCell id="hXhtGVc7Me_PGIMdzoVs-26" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="hXhtGVc7Me_PGIMdzoVs-27" target="hXhtGVc7Me_PGIMdzoVs-33" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="hXhtGVc7Me_PGIMdzoVs-27" value="Employee" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
+        <mxCell id="hXhtGVc7Me_PGIMdzoVs-27" value="Parent" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
           <mxGeometry x="-430" y="-40" width="50" height="100" as="geometry" />
         </mxCell>
         <mxCell id="hXhtGVc7Me_PGIMdzoVs-30" value="&lt;div&gt;Send Direct Message&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -159,7 +159,7 @@
             <mxPoint x="884" y="-161" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hXhtGVc7Me_PGIMdzoVs-123" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.628;exitY=0.31;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="hXhtGVc7Me_PGIMdzoVs-27" target="hXhtGVc7Me_PGIMdzoVs-41" edge="1">
+        <mxCell id="hXhtGVc7Me_PGIMdzoVs-123" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="hXhtGVc7Me_PGIMdzoVs-27" target="hXhtGVc7Me_PGIMdzoVs-41" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-370" y="10" as="sourcePoint" />
             <mxPoint x="70" y="-155" as="targetPoint" />
