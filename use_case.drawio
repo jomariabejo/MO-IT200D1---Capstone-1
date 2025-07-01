@@ -110,10 +110,10 @@
           <mxGeometry x="330" y="45" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="hXhtGVc7Me_PGIMdzoVs-107" value="Schedule Events" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="135" width="140" height="70" as="geometry" />
+          <mxGeometry x="430" y="140" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="hXhtGVc7Me_PGIMdzoVs-108" value="Manage Profile" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="478.5" y="215" width="140" height="70" as="geometry" />
+          <mxGeometry x="500" y="230" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="hXhtGVc7Me_PGIMdzoVs-109" value="Register Account" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="120" y="380" width="140" height="70" as="geometry" />
