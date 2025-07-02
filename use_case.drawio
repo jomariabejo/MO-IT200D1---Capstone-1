@@ -1,14 +1,14 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0" version="27.2.0" pages="3">
   <diagram name="initial" id="fPfGQbioiCVRYNzF3hgY">
-    <mxGraphModel dx="1835" dy="1675" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2123" dy="1704" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="hXhtGVc7Me_PGIMdzoVs-2" value="" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
           <mxGeometry x="-210" y="-640" width="890" height="1120" as="geometry" />
         </mxCell>
-        <mxCell id="hXhtGVc7Me_PGIMdzoVs-3" value="&lt;li data-end=&quot;418&quot; data-start=&quot;351&quot;&gt;&lt;p data-end=&quot;418&quot; data-start=&quot;354&quot;&gt;&lt;strong style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot; data-end=&quot;418&quot; data-start=&quot;354&quot;&gt;Parent-Teacher Communication Mobile App&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-end=&quot;492&quot; data-start=&quot;419&quot;&gt;&lt;p data-end=&quot;492&quot; data-start=&quot;422&quot;&gt;&lt;/p&gt;&lt;/li&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=28;" parent="1" vertex="1">
-          <mxGeometry x="-97.5" y="-590" width="716" height="30" as="geometry" />
+        <mxCell id="hXhtGVc7Me_PGIMdzoVs-3" value="&lt;strong style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent;&quot; data-end=&quot;418&quot; data-start=&quot;354&quot;&gt;Parent-Teacher Communication Mobile App&lt;/strong&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=28;" parent="1" vertex="1">
+          <mxGeometry x="-160" y="-620" width="820" height="30" as="geometry" />
         </mxCell>
         <mxCell id="hXhtGVc7Me_PGIMdzoVs-4" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="hXhtGVc7Me_PGIMdzoVs-7" target="hXhtGVc7Me_PGIMdzoVs-78" edge="1">
           <mxGeometry relative="1" as="geometry">
